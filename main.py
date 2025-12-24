@@ -1,8 +1,11 @@
 """
-Documentation standard:
-- Docstrings: PEP 257
-- Type hints: PEP 484
+Стандарт документации и оформления кода:
+
+В решении используется единый стандарт оформления:
+- документация функций оформлена в соответствии с PEP 257,
+- аннотации типов соответствуют PEP 484.
 """
+
 
 from dataclasses import dataclass
 import urllib.request
