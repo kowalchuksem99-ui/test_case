@@ -56,6 +56,7 @@ def normalise_phone_number(phone_number: str) -> NormalizeResult:
         digits = "7" + digits
     else:
         return NormalizeResult(False, error="Неподдерживаемый формат мобильного номера телефона")
+    # Проверка на стандартную длину номера телефона
     if len(digits) != 11:
         return NormalizeResult(False, error="Номер не может быть приведён к формату +79XXXXXXXXX")
 
@@ -137,8 +138,8 @@ def main(argv: list[str]) -> int:
         result = normalise_phone_number(raw_phone)
 
         if not result.ok:
-            print("false")
-            print(f"error: {result.error}")
+            print("False")
+            print(f"Error: {result.error}")
             return 1
 
         print("Нормализованная форма введённого номера телефона:", result.value)
@@ -148,7 +149,7 @@ def main(argv: list[str]) -> int:
         result = normalise_phone_number(argv[1])
 
         if not result.ok:
-            print(f"false\nerror: {result.error}")
+            print(f"False\nОшибка: {result.error}")
             return 1
 
         print(result.value)
@@ -178,8 +179,8 @@ def main(argv: list[str]) -> int:
         best = fallback_okved(okved_items)
         match_len = 0
 
-    print(f"OKVED: {best.code} — {best.name}")
-    print(f"Match length: {match_len}")
+    print(f"ОКВЭД: {best.code} — {best.name}")
+    print(f"Длина совпадения: {match_len}")
 
 if __name__ == "__main__":
     raise SystemExit(main(sys.argv))
