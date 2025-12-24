@@ -11,7 +11,7 @@ import json
 import sys
 import re
 
-JSON_URL = 'https://raw.githubusercontent.com/bergstar/testcase/refs/heads/master/okved.json'
+JSON_URL = 'raw-git-link'
 JSON_FILE = Path("okved.json")
 
 @dataclass(frozen=True)
